@@ -6,132 +6,209 @@ export const BRAND = {
   tagline: "Where BFSI careers begin.",
 };
 
-export const NAV_LINKS = [
-  { label: "Home", to: "/#home" },
-  { label: "About", to: "/about" },
-  { label: "Programs", to: "/#programs" },
-  { label: "Team", to: "/#team" },
-  { label: "Contact", to: "/#contact" },
+/* --------------------------- PROGRAMS --------------------------- */
+export const BRE_BANKS = [
+  {
+    code: "SBI",
+    name: "State Bank of India",
+    tag: "PSU · Nationwide",
+    color: "#22318A",
+    intro:
+      "India's largest public-sector bank. SBI's Business Relationship Executive (BRE) drive is our flagship placement pipeline for freshers.",
+    role: "Business Relationship Executive (BRE)",
+    responsibilities: [
+      "Cross-selling SBI retail products at branch level",
+      "CASA sourcing and lead conversion",
+      "Customer onboarding, KYC and service support",
+      "Field visits & campaign execution",
+    ],
+    eligibility: "12th pass / Graduate · Age 20-30 · Basic communication",
+    perks: ["Direct branch posting", "Monthly incentives", "Fast-track promotion track"],
+  },
+  {
+    code: "PNB",
+    name: "Punjab National Bank",
+    tag: "PSU · Legacy Brand",
+    color: "#8E1A2C",
+    intro:
+      "One of India's oldest public-sector banks. PNB's BRE program is designed for candidates ready to grow through branch operations.",
+    role: "Business Relationship Executive (BRE)",
+    responsibilities: [
+      "Deposit mobilisation and CASA growth",
+      "Loan product cross-sell (personal, vehicle, MSME)",
+      "Customer relationship management",
+      "Branch service desk support",
+    ],
+    eligibility: "12th pass / Graduate · Age 20-30",
+    perks: ["Pan-India branch network", "Structured KRA progression", "Tier-2/3 city postings available"],
+  },
+  {
+    code: "BOB",
+    name: "Bank of Baroda",
+    tag: "PSU · Global Presence",
+    color: "#F58220",
+    intro:
+      "A globally-present Indian PSU bank with a strong retail push. Bank of Baroda BRE roles focus on customer acquisition and cross-sell.",
+    role: "Business Relationship Executive (BRE)",
+    responsibilities: [
+      "New customer acquisition and CASA sourcing",
+      "Third-party product sales (insurance, MF)",
+      "Digital onboarding assistance for retail customers",
+      "Branch-level campaign execution",
+    ],
+    eligibility: "12th pass / Graduate · Age 20-30",
+    perks: ["Structured incentive slabs", "Metro & tier-2 postings", "Growth into RM roles"],
+  },
+  {
+    code: "RBI",
+    name: "RBL Bank (RBI)",
+    tag: "Private · New-Age",
+    color: "#0E3F7E",
+    intro:
+      "RBL Bank — one of India's fastest-growing new-age private banks. BRE roles focus on premium retail liability sourcing.",
+    role: "Business Relationship Executive (BRE)",
+    responsibilities: [
+      "Premium CASA sourcing",
+      "Credit card & personal loan cross-sell",
+      "Branch walk-in customer conversion",
+      "Portfolio management for HNI-lite segment",
+    ],
+    eligibility: "Graduate preferred · Age 20-28 · Strong communication",
+    perks: ["Higher variable pay", "Metro postings", "Private-sector career acceleration"],
+  },
 ];
 
 export const COURSES = [
   {
+    id: "smart-bre",
     number: "01",
-    title: "Banking & Insurance Fundamentals",
-    duration: "3 Months",
-    tag: "Foundation",
+    title: "Smart Banking BRE Program",
+    tag: "Fast Track",
+    duration: "15 Days",
+    fee: "₹2,000 + 18% GST",
+    salary: "₹18k – ₹20k CTC",
     description:
-      "Master core banking operations, KYC, retail products, insurance principles and regulatory frameworks trusted by leading BFSI recruiters.",
-    highlights: ["Retail & Corporate Banking", "IRDA Compliance", "Life & General Insurance"],
+      "Enter the banking sector in just 15 days. A recruiter-ready sprint for freshers targeting Business Relationship Executive roles across leading Indian banks.",
+    highlights: [
+      "Branch banking foundations",
+      "Cross-sell & lead conversion",
+      "Direct interview drives with partner banks",
+    ],
+    banks: BRE_BANKS,
   },
   {
+    id: "smart-micro",
     number: "02",
-    title: "Digital Banking & FinTech",
-    duration: "4 Months",
-    tag: "Advanced",
-    description:
-      "Learn the tech stack behind modern banks — UPI rails, digital lending, API banking, cybersecurity, and next-gen customer journeys.",
-    highlights: ["UPI & IMPS Systems", "Digital Lending", "FinTech APIs"],
-  },
-  {
-    number: "03",
-    title: "Investment Banking & Wealth",
-    duration: "5 Months",
-    tag: "Career Track",
-    description:
-      "Deep-dive into capital markets, portfolio management, mutual funds and equity research prepared for AMC and wealth manager placements.",
-    highlights: ["Equity Research", "Portfolio Analytics", "NISM Prep"],
-  },
-  {
-    number: "04",
-    title: "Financial Services & NBFC",
-    duration: "3 Months",
+    title: "Smart Banking Micro Program",
     tag: "In-Demand",
+    duration: "15 Days",
+    fee: "₹15,000 + 18% GST",
+    salary: "₹18k – ₹25k CTC",
     description:
-      "Understand consumer finance, NBFC operations, credit assessment and loan origination workflows for retail and MSME finance roles.",
-    highlights: ["Credit Underwriting", "Collections & Recovery", "Loan Origination"],
+      "A deeper 15-day dive built for candidates aiming for higher starting packages. Covers retail banking end-to-end with hands-on assignments.",
+    highlights: [
+      "Retail banking product suite",
+      "Customer profiling & KYC drills",
+      "Interview readiness bootcamp",
+    ],
   },
   {
-    number: "05",
-    title: "Sales & Relationship Management",
-    duration: "2 Months",
-    tag: "Placement Boost",
-    description:
-      "Build the pitch, the process, and the polish that turn bank branches and NBFCs into your first offer letter within weeks.",
-    highlights: ["B2C Banking Sales", "Client Advisory", "Cross-Sell Playbooks"],
-  },
-  {
-    number: "06",
-    title: "Advanced Excel & BFSI Analytics",
+    id: "future-gb",
+    number: "03",
+    title: "Future Banking GB Program",
+    tag: "Career Track",
     duration: "45 Days",
-    tag: "Toolkit",
+    fee: "₹60,000",
+    salary: "₹20k – ₹30k + 18% GST",
     description:
-      "The analytical toolkit every BFSI role expects — Excel modelling, Power Query, dashboards and reporting used by operations teams.",
-    highlights: ["Financial Modelling", "Pivot & Power Query", "BFSI Dashboards"],
+      "Our flagship 45-day General Banking track — built for learners targeting officer-grade roles in banks, NBFCs and fintech firms.",
+    highlights: [
+      "Core banking operations & compliance",
+      "Digital banking, UPI & lending",
+      "Recruiter drives with 30+ hiring partners",
+    ],
+  },
+  {
+    id: "pro-insurance",
+    number: "04",
+    title: "Pro Banking Insurance Program",
+    tag: "Advanced",
+    duration: "30 Days",
+    fee: "₹30,000 + 18% GST",
+    salary: "₹20k – ₹35k CTC",
+    description:
+      "Master the intersection of banking and insurance — the highest-cross-sell segment in Indian retail finance. Includes IRDA-oriented modules.",
+    highlights: [
+      "Life & general insurance principles",
+      "Bancassurance selling frameworks",
+      "IRDA-aligned compliance basics",
+    ],
+  },
+  {
+    id: "pro-operations",
+    number: "05",
+    title: "Pro Banking Operation Program",
+    tag: "Career Track",
+    duration: "21 Days",
+    fee: "₹30,000 + 18% GST",
+    salary: "₹13.5k → ₹17.5k → ₹20k CTC (0-6 months)",
+    description:
+      "A performance-linked track for banking operations roles. Salary steps up on-the-job — ₹13.5k for the first 3 months, ₹17.5k after 3 months, ₹20k after 6 months.",
+    highlights: [
+      "Branch operations & clearing",
+      "Reconciliation & MIS reporting",
+      "On-job salary progression",
+    ],
   },
 ];
 
+/* --------------------------- TEAM --------------------------- */
 export const TEAM = [
   {
-    role: "Director",
-    name: "The Director",
-    img: "https://images.pexels.com/photos/38453564/pexels-photo-38453564.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    bio: "Two decades across retail banking, NBFC leadership and BFSI strategy — steering RivalEdge's academic direction and industry partnerships.",
+    role: "Deputy Director",
+    name: "Rishikesh Raj",
+    img: "/team/director.jpg",
+    bio: "Leads RivalEdge's academic and industry-partnership strategy. Owns the placement mandate: every graduate deserves an interview with a real BFSI recruiter.",
   },
   {
-    role: "Chief Executive Officer",
-    name: "The CEO",
-    img: "https://images.pexels.com/photos/11655430/pexels-photo-11655430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    bio: "Ex-private banker turned educator, obsessed with placement outcomes and building a culture where every student's first offer arrives fast.",
+    role: "Deputy General Manager",
+    name: "Niraj Singh",
+    img: "/team/general-manager.jpg",
+    bio: "Runs day-to-day operations from our Vijay Nagar campus in Patna. Batches, mentorship rosters and recruiter drives — Niraj makes it happen.",
+  },
+  {
+    role: "Managing Partner",
+    name: "Managing Partner",
+    img: "/team/managing-partner.jpg",
+    bio: "Focused on institutional partnerships, curriculum evolution and long-term hiring commitments with our recruiter network.",
   },
   {
     role: "Head of HR & Placements",
     name: "HR Lead",
-    img: "https://images.unsplash.com/photo-1581841064838-a470c740e8ee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRpZ2l0YWwlMjBtYXJrZXRpbmclMjBwb3J0cmFpdHxlbnwwfHx8fDE3ODQ2NTk1MDN8MA&ixlib=rb-4.1.0&q=85",
-    bio: "Runs our recruiter network of 60+ banks, NBFCs and insurance houses. Owns interview readiness, mock drills and offer negotiations.",
+    img: "/team/hr.jpg",
+    bio: "Manages 60+ hiring partner relationships, interview readiness drills and offer negotiation for every RivalEdge cohort.",
   },
   {
     role: "Senior Telecaller",
     name: "Career Advisor",
-    img: "https://images.pexels.com/photos/5467586/pexels-photo-5467586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    bio: "Your first friendly voice at RivalEdge — helping aspirants pick the right program, schedule counselling and prep for their BFSI journey.",
-  },
-  {
-    role: "Digital Marketing Team",
-    name: "Growth Studio",
-    img: "https://images.pexels.com/photos/20181989/pexels-photo-20181989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    bio: "The storytellers turning student wins into scroll-stopping campaigns — running our brand, content, and outreach across every channel.",
+    img: "/team/telecaller.jpg",
+    bio: "The friendly first voice at RivalEdge — helps aspirants pick the right program, schedule counselling and prep for their BFSI journey.",
   },
 ];
 
+/* --------------------------- MISC --------------------------- */
 export const MANIFESTO = [
-  {
-    n: "I.",
-    h: "Industry, not textbook.",
-    p: "Our curriculum is written with recruiters — not for exam halls. Every module maps to a real BFSI job description.",
-  },
-  {
-    n: "II.",
-    h: "Placement is the product.",
-    p: "We measure ourselves by offer letters, not attendance sheets. If you show up, we show up harder.",
-  },
-  {
-    n: "III.",
-    h: "Character before credential.",
-    p: "Bankers are trusted people. We drill grooming, ethics, communication and composure into every cohort.",
-  },
-  {
-    n: "IV.",
-    h: "Small city, big ambition.",
-    p: "Rooted in Patna, wired to India's BFSI capitals. Distance is not a disqualifier at RivalEdge.",
-  },
+  { n: "I.", h: "Industry, not textbook.", p: "Our curriculum is written with recruiters — not for exam halls. Every module maps to a real BFSI job description." },
+  { n: "II.", h: "Placement is the product.", p: "We measure ourselves by offer letters, not attendance sheets. If you show up, we show up harder." },
+  { n: "III.", h: "Character before credential.", p: "Bankers are trusted people. We drill grooming, ethics, communication and composure into every cohort." },
+  { n: "IV.", h: "Small city, big ambition.", p: "Rooted in Patna, wired to India's BFSI capitals. Distance is not a disqualifier at RivalEdge." },
 ];
 
 export const STATS = [
   { k: "1,200+", v: "Students Trained" },
   { k: "60+", v: "Hiring Partners" },
   { k: "92%", v: "Placement Rate" },
-  { k: "6", v: "Career Tracks" },
+  { k: "5", v: "Career Tracks" },
 ];
 
 export const IMAGES = {
@@ -142,7 +219,8 @@ export const IMAGES = {
 };
 
 export const HIRING_PARTNERS = [
-  "HDFC Bank", "ICICI Bank", "Axis Bank", "Kotak Mahindra", "IDFC First",
-  "Bajaj Finance", "Yes Bank", "Bandhan Bank", "IndusInd", "Federal Bank",
-  "SBI Life", "HDFC Life", "ICICI Prudential", "Max Life", "Tata AIA",
+  "SBI", "PNB", "Bank of Baroda", "RBL Bank", "HDFC Bank", "ICICI Bank",
+  "Axis Bank", "Kotak Mahindra", "IDFC First", "Bajaj Finance", "Yes Bank",
+  "Bandhan Bank", "IndusInd", "Federal Bank", "SBI Life", "HDFC Life",
+  "ICICI Prudential", "Max Life", "Tata AIA",
 ];
