@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/sections/Hero";
 import EditorialMarquee from "@/components/sections/EditorialMarquee";
 import AboutIntro from "@/components/sections/AboutIntro";
+import VisionMission from "@/components/sections/VisionMission";
 import Programs from "@/components/sections/Programs";
 import Team from "@/components/sections/Team";
 import PartnersStrip from "@/components/sections/PartnersStrip";
@@ -32,6 +33,7 @@ export default function Landing() {
         <Hero />
         <EditorialMarquee />
         <AboutIntro />
+        <VisionMission />
         <Programs />
         <PartnersStrip />
         <Team />
