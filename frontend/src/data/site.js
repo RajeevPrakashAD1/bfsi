@@ -201,6 +201,12 @@ export const TEAM = [
     img: "/team/receptionist.jpg",
     bio: "The first friendly face at our Vijay Nagar campus — walk-ins and welcome.",
   },
+  {
+    role: "Deputy General Manager",
+    name: "Niraj Singh",
+    img: "/team/general-manager.jpg",
+    bio: "Runs day-to-day operations from our Vijay Nagar campus in Patna — batches, mentorship rosters and recruiter drives.",
+  },
 ];
 
 /* --------------------------- MISC --------------------------- */
