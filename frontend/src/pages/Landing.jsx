@@ -7,6 +7,7 @@ import EditorialMarquee from "@/components/sections/EditorialMarquee";
 import AboutIntro from "@/components/sections/AboutIntro";
 import VisionMission from "@/components/sections/VisionMission";
 import Programs from "@/components/sections/Programs";
+import PlacedStudents from "@/components/sections/PlacedStudents";
 import Team from "@/components/sections/Team";
 import PartnersStrip from "@/components/sections/PartnersStrip";
 import ApplyForm from "@/components/sections/ApplyForm";
@@ -35,6 +36,7 @@ export default function Landing() {
         <AboutIntro />
         <VisionMission />
         <Programs />
+        <PlacedStudents />
         <PartnersStrip />
         <Team />
         <ApplyForm />

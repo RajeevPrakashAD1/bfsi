@@ -212,7 +212,8 @@ export const STATS = [
 ];
 
 export const IMAGES = {
-  hero: "https://images.pexels.com/photos/32229751/pexels-photo-32229751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1200&w=1800",
+  hero: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=85",
+  heroSecondary: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85",
   about: "https://images.pexels.com/photos/9159042/pexels-photo-9159042.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
   banking: "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwyfHxpbnZlc3RtZW50JTIwY2hhcnQlMjBzdG9jayUyMG1hcmtldHxlbnwwfHx8fDE3ODQ2NTk0Njh8MA&ixlib=rb-4.1.0&q=85",
   digital: "https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwyfHxkaWdpdGFsJTIwYmFua2luZyUyMGFwcCUyMHBob25lfGVufDB8fHx8MTc4NDY1OTQ2OXww&ixlib=rb-4.1.0&q=85",
@@ -223,4 +224,44 @@ export const HIRING_PARTNERS = [
   "Axis Bank", "Kotak Mahindra", "IDFC First", "Bajaj Finance", "Yes Bank",
   "Bandhan Bank", "IndusInd", "Federal Bank", "SBI Life", "HDFC Life",
   "ICICI Prudential", "Max Life", "Tata AIA",
+];
+
+/* --------------------------- PLACED STUDENTS --------------------------- */
+export const PLACEMENTS = [
+  {
+    id: "sumit-sbi",
+    name: "Sumit Kumar",
+    company: "State Bank of India",
+    role: "May I Help You",
+    package: "3.5 LPA",
+    color: "#22318A",
+    img: "/placements/sbi-sumit.png",
+  },
+  {
+    id: "kajal-axis",
+    name: "Kajal Kumari",
+    company: "Axis Bank",
+    role: "Assistant Manager",
+    package: "4.5 LPA",
+    color: "#8E1A2C",
+    img: "/placements/axis-kajal.png",
+  },
+  {
+    id: "manish-ntpc",
+    name: "Manish Govinda",
+    company: "NTPC Patratu",
+    role: "Safety Supervisor",
+    package: "4.0 LPA",
+    color: "#0E3F7E",
+    img: "/placements/ntpc-manish.png",
+  },
+  {
+    id: "nishant-hdfc",
+    name: "Nishant Kumar",
+    company: "HDFC Bank",
+    role: "Deputy Manager",
+    package: "5.80 LPA",
+    color: "#004C8F",
+    img: "/placements/hdfc-nishant.png",
+  },
 ];

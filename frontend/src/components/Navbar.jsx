@@ -8,6 +8,7 @@ const links = [
   { label: "Home", to: "/", hash: "#home" },
   { label: "About", to: "/about" },
   { label: "Programs", to: "/", hash: "#programs" },
+  { label: "Placements", to: "/", hash: "#placements" },
   { label: "Team", to: "/", hash: "#team" },
   { label: "Contact", to: "/", hash: "#contact" },
 ];

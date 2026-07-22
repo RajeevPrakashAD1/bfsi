@@ -33,6 +33,7 @@ export default function Footer() {
               <li><Link to="/" data-testid="footer-link-home" className="link-underline hover:text-white">Home</Link></li>
               <li><Link to="/about" data-testid="footer-link-about" className="link-underline hover:text-white">About Us</Link></li>
               <li><a href="/#programs" data-testid="footer-link-programs" className="link-underline hover:text-white">Programs</a></li>
+              <li><a href="/#placements" data-testid="footer-link-placements" className="link-underline hover:text-white">Placements</a></li>
               <li><a href="/#team" data-testid="footer-link-team" className="link-underline hover:text-white">Our Team</a></li>
               <li><a href="/#contact" data-testid="footer-link-contact" className="link-underline hover:text-white">Contact</a></li>
               <li><Link to="/privacy" data-testid="footer-link-privacy" className="link-underline hover:text-white">Privacy Policy</Link></li>
