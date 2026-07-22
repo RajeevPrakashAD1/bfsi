@@ -85,7 +85,7 @@ export const COURSES = [
     title: "Smart Banking BRE Program",
     tag: "Fast Track",
     duration: "15 Days",
-    fee: "₹2,000 + 18% GST",
+    fee: "₹20,000 + 18% GST",
     salary: "₹18k – ₹20k CTC",
     description:
       "Enter the banking sector in just 15 days. A recruiter-ready sprint for freshers targeting Business Relationship Executive roles across leading Indian banks.",
@@ -168,13 +168,14 @@ export const TEAM = [
     role: "Deputy Director",
     name: "Rishikesh Raj",
     img: "/team/director.jpg",
-    bio: "Leads RivalEdge's academic and industry-partnership strategy.",
+    bio: "Leads RivalEdge's academic and industry-partnership strategy. Owns the placement mandate for every RivalEdge graduate.",
+    featured: true,
   },
   {
-    role: "Deputy General Manager",
-    name: "Niraj Singh",
-    img: "/team/general-manager.jpg",
-    bio: "Runs day-to-day operations from our Vijay Nagar campus in Patna.",
+    role: "Chief Executive Officer",
+    name: "Miss Pushpa Shani",
+    img: "/team/hr.jpg",
+    bio: "Steers RivalEdge Ventures' vision, culture and placement outcomes across every cohort.",
   },
   {
     role: "Managing Partner",
@@ -183,10 +184,10 @@ export const TEAM = [
     bio: "Focused on institutional partnerships and long-term hiring commitments.",
   },
   {
-    role: "Head of HR & Placements",
-    name: "HR Lead",
-    img: "/team/hr.jpg",
-    bio: "Manages 60+ hiring partner relationships and interview readiness.",
+    role: "Director",
+    name: "Vandana Singhaniya",
+    img: "/team/vandana-singhaniya.jpg",
+    bio: "Oversees institutional strategy and BFSI recruiter relationships for RivalEdge Ventures.",
   },
   {
     role: "Digital Marketing",
@@ -201,10 +202,10 @@ export const TEAM = [
     bio: "The first friendly face at our Vijay Nagar campus — walk-ins and welcome.",
   },
   {
-    role: "Senior Telecaller",
-    name: "Career Advisor",
-    img: "/team/telecaller.jpg",
-    bio: "Helps aspirants pick the right program and schedule counselling.",
+    role: "Deputy General Manager",
+    name: "Niraj Singh",
+    img: "/team/general-manager.jpg",
+    bio: "Runs day-to-day operations from our Vijay Nagar campus in Patna — batches, mentorship rosters and recruiter drives.",
   },
 ];
 
