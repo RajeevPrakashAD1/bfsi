@@ -184,10 +184,10 @@ export const TEAM = [
     bio: "Focused on institutional partnerships and long-term hiring commitments.",
   },
   {
-    role: "Director",
+    role: "Counselor",
     name: "Vandana Singhaniya",
     img: "/team/vandana-singhaniya.jpg",
-    bio: "Oversees institutional strategy and BFSI recruiter relationships for RivalEdge Ventures.",
+    bio: "Guides students through program selection, career mapping and BFSI-role fitment — every applicant's first mentor at RivalEdge.",
   },
   {
     role: "Digital Marketing",
@@ -200,12 +200,6 @@ export const TEAM = [
     name: "Receptionist",
     img: "/team/receptionist.jpg",
     bio: "The first friendly face at our Vijay Nagar campus — walk-ins and welcome.",
-  },
-  {
-    role: "Deputy General Manager",
-    name: "Niraj Singh",
-    img: "/team/general-manager.jpg",
-    bio: "Runs day-to-day operations from our Vijay Nagar campus in Patna — batches, mentorship rosters and recruiter drives.",
   },
 ];
 
