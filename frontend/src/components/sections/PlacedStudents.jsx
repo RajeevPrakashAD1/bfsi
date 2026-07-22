@@ -93,9 +93,9 @@ export default function PlacedStudents() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          {/* Left: student poster */}
-          <div className="lg:col-span-7 relative">
-            <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[5/6] w-full max-w-2xl mx-auto overflow-hidden bg-[#0b1330] border border-white/10">
+          {/* Left: student poster (smaller) */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative aspect-[3/4] w-full max-w-sm mx-auto overflow-hidden bg-[#0b1330] border border-white/10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
               <AnimatePresence mode="wait" custom={dir}>
                 <motion.img
                   key={current.id}
@@ -112,23 +112,23 @@ export default function PlacedStudents() {
               </AnimatePresence>
 
               {/* Subtle top gradient for badge legibility */}
-              <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-              <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+              <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
 
               {/* Corner trophy badge */}
-              <div className="absolute top-4 left-4 flex items-center gap-2 bg-navy-deep/85 backdrop-blur border border-gold/40 rounded-full px-3.5 py-1.5">
-                <Trophy className="h-3.5 w-3.5 text-gold" />
-                <span className="text-[10px] uppercase tracking-[0.28em] text-gold">Placed</span>
+              <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-navy-deep/85 backdrop-blur border border-gold/40 rounded-full px-2.5 py-1">
+                <Trophy className="h-3 w-3 text-gold" />
+                <span className="text-[9px] uppercase tracking-[0.28em] text-gold">Placed</span>
               </div>
 
               {/* Slide index */}
-              <div className="absolute bottom-4 right-4 bg-navy-deep/85 backdrop-blur border border-white/10 px-3 py-1 text-[11px] tracking-[0.24em] text-white/80">
+              <div className="absolute bottom-3 right-3 bg-navy-deep/85 backdrop-blur border border-white/10 px-2.5 py-0.5 text-[10px] tracking-[0.24em] text-white/80">
                 {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
               </div>
             </div>
 
             {/* Thumbnails */}
-            <div className="mt-6 grid grid-cols-4 gap-3">
+            <div className="mt-5 grid grid-cols-4 gap-2 max-w-sm mx-auto">
               {PLACEMENTS.map((p, i) => (
                 <button
                   key={p.id}
@@ -147,7 +147,7 @@ export default function PlacedStudents() {
           </div>
 
           {/* Right: details */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}

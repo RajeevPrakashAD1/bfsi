@@ -3,8 +3,9 @@ import { TEAM } from "@/data/site";
 
 export default function Team() {
   return (
-    <section id="team" className="relative bg-navy-deep py-32 lg:py-40" data-testid="team-section">
+    <section id="team" className="relative bg-navy-deep py-28 lg:py-36" data-testid="team-section">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        {/* Header */}
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 text-[11px] tracking-[0.32em] uppercase text-gold">
             <span className="h-px w-10 bg-gold/60" />
@@ -13,43 +14,53 @@ export default function Team() {
           <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.02] tracking-tight text-balance">
             Bankers, mentors, matchmakers.
           </h2>
-          <p className="mt-6 text-white/60 text-lg max-w-2xl leading-relaxed">
+          <p className="mt-5 text-white/60 text-base max-w-2xl leading-relaxed">
             The people who make RivalEdge Ventures a career studio — not a classroom.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {TEAM.map((m, i) => (
-            <motion.figure
-              key={m.role}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.8, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="card-gold-hover group border border-white/10 bg-[#0b1330] overflow-hidden"
-              data-testid={`team-card-${m.role.toLowerCase().replace(/\s+/g, "-")}`}
-            >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={m.img}
-                  alt={m.role}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/20 to-transparent" />
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="text-[10px] uppercase tracking-[0.28em] text-gold bg-navy-deep/60 backdrop-blur px-3 py-1 border border-gold/30">
+        {/* Horizontal single-row strip */}
+        <div
+          className="mt-12 -mx-6 lg:-mx-10 px-6 lg:px-10 overflow-x-auto scrollbar-hide"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          <div className="flex gap-5 pb-4">
+            {TEAM.map((m, i) => (
+              <motion.figure
+                key={m.role + m.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                className="group shrink-0 w-[180px] sm:w-[200px] lg:w-[210px] border border-white/10 bg-[#0b1330] overflow-hidden hover:border-gold/50 transition-all"
+                style={{ scrollSnapAlign: "start" }}
+                data-testid={`team-card-${m.role.toLowerCase().replace(/\s+/g, "-")}`}
+              >
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <img
+                    src={m.img}
+                    alt={m.role}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/10 to-transparent" />
+                  <span className="absolute top-3 left-3 text-[9px] uppercase tracking-[0.22em] text-gold bg-navy-deep/70 backdrop-blur px-2 py-1 border border-gold/25">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-              </div>
-              <figcaption className="p-6">
-                <div className="text-[10px] uppercase tracking-[0.28em] text-gold">{m.role}</div>
-                <div className="mt-2 font-display text-xl text-white">{m.name}</div>
-                <p className="mt-3 text-white/60 text-sm leading-relaxed">{m.bio}</p>
-              </figcaption>
-            </motion.figure>
-          ))}
+                <figcaption className="p-4">
+                  <div className="text-[9px] uppercase tracking-[0.24em] text-gold">{m.role}</div>
+                  <div className="mt-1 font-display text-base text-white leading-tight">{m.name}</div>
+                  <p className="mt-2 text-white/55 text-[11px] leading-relaxed line-clamp-3">{m.bio}</p>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </div>
+        </div>
+
+        {/* Scroll hint */}
+        <div className="mt-6 text-[10px] uppercase tracking-[0.28em] text-white/40">
+          &larr; Scroll to explore the team &rarr;
         </div>
       </div>
     </section>

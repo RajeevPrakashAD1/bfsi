@@ -32,6 +32,10 @@ html.lenis, html.lenis body { height: auto; }
 ::-webkit-scrollbar-thumb { background: #1e2a52; border-radius: 8px; }
 ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
 
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
 /* Selection */
 ::selection { background: #D4AF37; color: #050917; }
 

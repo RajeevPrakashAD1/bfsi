@@ -168,31 +168,43 @@ export const TEAM = [
     role: "Deputy Director",
     name: "Rishikesh Raj",
     img: "/team/director.jpg",
-    bio: "Leads RivalEdge's academic and industry-partnership strategy. Owns the placement mandate: every graduate deserves an interview with a real BFSI recruiter.",
+    bio: "Leads RivalEdge's academic and industry-partnership strategy.",
   },
   {
     role: "Deputy General Manager",
     name: "Niraj Singh",
     img: "/team/general-manager.jpg",
-    bio: "Runs day-to-day operations from our Vijay Nagar campus in Patna. Batches, mentorship rosters and recruiter drives — Niraj makes it happen.",
+    bio: "Runs day-to-day operations from our Vijay Nagar campus in Patna.",
   },
   {
     role: "Managing Partner",
     name: "Managing Partner",
     img: "/team/managing-partner.jpg",
-    bio: "Focused on institutional partnerships, curriculum evolution and long-term hiring commitments with our recruiter network.",
+    bio: "Focused on institutional partnerships and long-term hiring commitments.",
   },
   {
     role: "Head of HR & Placements",
     name: "HR Lead",
     img: "/team/hr.jpg",
-    bio: "Manages 60+ hiring partner relationships, interview readiness drills and offer negotiation for every RivalEdge cohort.",
+    bio: "Manages 60+ hiring partner relationships and interview readiness.",
+  },
+  {
+    role: "Digital Marketing",
+    name: "Growth Studio",
+    img: "/team/digital-marketing.jpg",
+    bio: "Runs our brand, content and outreach across every channel.",
+  },
+  {
+    role: "Front Office",
+    name: "Receptionist",
+    img: "/team/receptionist.jpg",
+    bio: "The first friendly face at our Vijay Nagar campus — walk-ins and welcome.",
   },
   {
     role: "Senior Telecaller",
     name: "Career Advisor",
     img: "/team/telecaller.jpg",
-    bio: "The friendly first voice at RivalEdge — helps aspirants pick the right program, schedule counselling and prep for their BFSI journey.",
+    bio: "Helps aspirants pick the right program and schedule counselling.",
   },
 ];
 
