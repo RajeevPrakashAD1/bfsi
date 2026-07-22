@@ -55,7 +55,20 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-gold mt-1 shrink-0" />
-                <span data-testid="footer-location">{BRAND.location}</span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=RivalEdge+Ventures+Vijay+Nagar+Bhootnath+Metro+Patna+Bihar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="footer-location"
+                  className="hover:text-white group inline-flex items-start gap-2"
+                  aria-label="Open our location in Google Maps"
+                >
+                  <span>{BRAND.location}</span>
+                  <span className="inline-flex items-center gap-1 text-gold text-[10px] uppercase tracking-[0.24em] whitespace-nowrap opacity-80 group-hover:opacity-100 mt-1">
+                    <span className="h-1 w-1 rounded-full bg-gold" />
+                    Get directions
+                  </span>
+                </a>
               </li>
             </ul>
           </div>

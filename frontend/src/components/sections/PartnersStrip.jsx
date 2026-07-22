@@ -7,7 +7,7 @@ export default function PartnersStrip() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex items-center gap-3 text-[11px] tracking-[0.32em] uppercase text-white/50 mb-8">
           <span className="h-px w-10 bg-gold/60" />
-          Recruiters our alumni join
+          Private Bank & Insurance Partners
         </div>
       </div>
       <div className="marquee-fade">

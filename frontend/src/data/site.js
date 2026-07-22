@@ -226,16 +226,15 @@ export const STATS = [
 export const IMAGES = {
   hero: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=85",
   heroSecondary: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85",
-  about: "https://images.pexels.com/photos/9159042/pexels-photo-9159042.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1400",
+  about: "/about-classroom.jpg",
   banking: "https://images.unsplash.com/photo-1560221328-12fe60f83ab8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwyfHxpbnZlc3RtZW50JTIwY2hhcnQlMjBzdG9jayUyMG1hcmtldHxlbnwwfHx8fDE3ODQ2NTk0Njh8MA&ixlib=rb-4.1.0&q=85",
   digital: "https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwyfHxkaWdpdGFsJTIwYmFua2luZyUyMGFwcCUyMHBob25lfGVufDB8fHx8MTc4NDY1OTQ2OXww&ixlib=rb-4.1.0&q=85",
 };
 
 export const HIRING_PARTNERS = [
-  "SBI", "PNB", "Bank of Baroda", "RBL Bank", "HDFC Bank", "ICICI Bank",
-  "Axis Bank", "Kotak Mahindra", "IDFC First", "Bajaj Finance", "Yes Bank",
-  "Bandhan Bank", "IndusInd", "Federal Bank", "SBI Life", "HDFC Life",
-  "ICICI Prudential", "Max Life", "Tata AIA",
+  "HDFC Bank", "ICICI Bank", "Axis Bank", "Kotak Mahindra Bank", "IDFC First Bank",
+  "RBL Bank", "Yes Bank", "Bandhan Bank", "IndusInd Bank", "Federal Bank",
+  "Bajaj Finance", "HDFC Life", "ICICI Prudential", "Max Life", "Tata AIA",
 ];
 
 /* --------------------------- PLACED STUDENTS --------------------------- */

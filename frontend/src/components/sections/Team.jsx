@@ -32,7 +32,7 @@ export default function Team() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                className="group shrink-0 w-[180px] sm:w-[200px] lg:w-[210px] border border-white/10 bg-[#0b1330] overflow-hidden hover:border-gold/50 transition-all"
+                className="group shrink-0 w-[140px] sm:w-[155px] lg:w-[170px] border border-white/10 bg-[#0b1330] overflow-hidden hover:border-gold/50 transition-all"
                 style={{ scrollSnapAlign: "start" }}
                 data-testid={`team-card-${m.role.toLowerCase().replace(/\s+/g, "-")}`}
               >
@@ -48,10 +48,10 @@ export default function Team() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <figcaption className="p-4">
-                  <div className="text-[9px] uppercase tracking-[0.24em] text-gold">{m.role}</div>
-                  <div className="mt-1 font-display text-base text-white leading-tight">{m.name}</div>
-                  <p className="mt-2 text-white/55 text-[11px] leading-relaxed line-clamp-3">{m.bio}</p>
+                <figcaption className="p-3">
+                  <div className="text-[8.5px] uppercase tracking-[0.22em] text-gold">{m.role}</div>
+                  <div className="mt-0.5 font-display text-sm text-white leading-tight">{m.name}</div>
+                  <p className="mt-1.5 text-white/55 text-[10px] leading-snug line-clamp-2">{m.bio}</p>
                 </figcaption>
               </motion.figure>
             ))}
