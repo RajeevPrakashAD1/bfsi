@@ -1,12 +1,11 @@
 # Direct runtime dependencies of server.py only. Transitive deps (starlette,
-# pymongo, email-validator, anyio, ...) are resolved by pip from these.
+# email-validator, anyio, ...) are resolved by pip from these.
 
 fastapi==0.110.1
 uvicorn==0.25.0
 python-multipart==0.0.32
 
 python-dotenv==1.2.2
-motor==3.3.1
 httpx==0.28.1
 PyJWT==2.13.0
 bcrypt==4.1.3

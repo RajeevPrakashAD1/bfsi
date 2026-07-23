@@ -2,7 +2,6 @@ from fastapi import FastAPI, APIRouter, HTTPException, UploadFile, File, Form, D
 from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import io
 import logging
@@ -20,10 +19,14 @@ from openpyxl import Workbook
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+# Supabase (PostgREST over HTTP: stateless, so no connection pool to leak on serverless)
+SUPABASE_REST = f"{os.environ['SUPABASE_URL'].rstrip('/')}/rest/v1"
+SUPABASE_KEY = os.environ['SUPABASE_SERVICE_ROLE_KEY']
+SUPABASE_HEADERS = {
+    "apikey": SUPABASE_KEY,
+    "Authorization": f"Bearer {SUPABASE_KEY}",
+    "Content-Type": "application/json",
+}
 
 # Email
 EMAIL_BASE_URL = "https://integrations.emergentagent.com"
@@ -84,6 +87,25 @@ class LoginRequest(BaseModel):
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str = "bearer"
+
+# ---------- Data access ----------
+async def db_insert(table: str, row: dict) -> None:
+    async with httpx.AsyncClient(timeout=30) as http:
+        resp = await http.post(f"{SUPABASE_REST}/{table}", headers=SUPABASE_HEADERS, json=row)
+    if resp.status_code >= 400:
+        logger.error(f"Supabase insert into {table} failed: {resp.status_code} {resp.text}")
+        raise HTTPException(status_code=500, detail="Could not save your submission")
+
+
+async def db_list(table: str, limit: int) -> List[dict]:
+    params = {"select": "*", "order": "created_at.desc", "limit": str(limit)}
+    async with httpx.AsyncClient(timeout=30) as http:
+        resp = await http.get(f"{SUPABASE_REST}/{table}", headers=SUPABASE_HEADERS, params=params)
+    if resp.status_code >= 400:
+        logger.error(f"Supabase read from {table} failed: {resp.status_code} {resp.text}")
+        raise HTTPException(status_code=500, detail="Could not load records")
+    return resp.json()
+
 
 # ---------- Utils ----------
 async def send_email(to_email: str, subject: str, html: str, reply_to: Optional[str] = None) -> bool:
@@ -182,7 +204,7 @@ async def submit_contact(payload: ContactMessageCreate):
     if not payload.name.strip() or not payload.message.strip():
         raise HTTPException(status_code=400, detail="Name and message are required")
     msg = ContactMessage(**payload.model_dump())
-    await db.contact_messages.insert_one(msg.model_dump())
+    await db_insert("contact_messages", msg.model_dump())
 
     admin_body = f"""
     <p>You have received a new contact enquiry.</p>
@@ -254,7 +276,7 @@ async def submit_application(
         resume_filename=resume_filename,
         resume_size=resume_size,
     )
-    await db.applications.insert_one(app_obj.model_dump())
+    await db_insert("applications", app_obj.model_dump())
 
     admin_body = f"""
     <p>A new student application has been submitted.</p>
@@ -300,20 +322,18 @@ async def admin_me(user: str = Depends(require_admin)):
 # --- Admin: list applications ---
 @api_router.get("/admin/applications")
 async def list_applications(_: str = Depends(require_admin)):
-    docs = await db.applications.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
-    return docs
+    return await db_list("applications", 1000)
 
 
 @api_router.get("/admin/contacts")
 async def list_contacts(_: str = Depends(require_admin)):
-    docs = await db.contact_messages.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
-    return docs
+    return await db_list("contact_messages", 1000)
 
 
 # --- Admin: export applications as Excel ---
 @api_router.get("/admin/applications/export")
 async def export_applications(_: str = Depends(require_admin)):
-    docs = await db.applications.find({}, {"_id": 0}).sort("created_at", -1).to_list(5000)
+    docs = await db_list("applications", 5000)
     wb = Workbook()
     ws = wb.active
     ws.title = "Applications"
@@ -358,8 +378,3 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
