@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Download, LogOut, RefreshCw, Loader2, FileText, Mail as MailIcon } from "lucide-react";
 import { toast } from "sonner";
@@ -13,7 +13,7 @@ export default function AdminDashboard() {
   const [exporting, setExporting] = useState(false);
   const nav = useNavigate();
 
-  const load = async () => {
+  const load = useCallback(async () => {
     if (!localStorage.getItem("re_admin_token")) {
       nav("/admin/login");
       return;
@@ -33,9 +33,9 @@ export default function AdminDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [nav]);
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => { load(); }, [load]);
 
   const logout = () => {
     localStorage.removeItem("re_admin_token");
