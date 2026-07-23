@@ -1,5 +1,11 @@
 import axios from "axios";
 
+// Web3Forms: free form-to-email service. Submissions are emailed to the address
+// registered with this access key. The key is public/client-safe by design.
+const WEB3FORMS_URL = "https://api.web3forms.com/submit";
+const WEB3FORMS_ACCESS_KEY =
+  process.env.REACT_APP_WEB3FORMS_KEY || "8316aedb-4a0c-498a-b766-895295609d09";
+
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export const API = `${BACKEND_URL}/api`;
 
@@ -14,15 +20,29 @@ api.interceptors.request.use((cfg) => {
 export default api;
 
 export async function submitContact(data) {
-  const res = await api.post("/contact", data);
-  return res.data;
+  const res = await fetch(WEB3FORMS_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({
+      access_key: WEB3FORMS_ACCESS_KEY,
+      from_name: "RivalEdge Ventures Website",
+      subject: `New Contact Enquiry — ${data.name}`,
+      ...data,
+    }),
+  });
+  const json = await res.json();
+  if (!json.success) throw new Error(json.message || "Failed to send message.");
+  return json;
 }
 
 export async function submitApplication(formData) {
-  const res = await api.post("/applications", formData, {
-    headers: { "Content-Type": "multipart/form-data" },
-  });
-  return res.data;
+  formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+  formData.append("from_name", "RivalEdge Ventures Website");
+  formData.append("subject", `New Application — ${formData.get("full_name") || ""}`);
+  const res = await fetch(WEB3FORMS_URL, { method: "POST", body: formData });
+  const json = await res.json();
+  if (!json.success) throw new Error(json.message || "Failed to submit application.");
+  return json;
 }
 
 export async function adminLogin(username, password) {
