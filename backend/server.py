@@ -6,6 +6,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import io
 import logging
+import tempfile
 import httpx
 import jwt as pyjwt
 import bcrypt
@@ -234,8 +235,9 @@ async def submit_application(
         if len(content) > 5 * 1024 * 1024:
             raise HTTPException(status_code=400, detail="Resume exceeds 5MB limit")
         safe_name = f"{uuid.uuid4().hex}{ext}"
-        upload_dir = ROOT_DIR / "uploads"
-        upload_dir.mkdir(exist_ok=True)
+        # Serverless hosts give us a read-only app dir, so default to the temp dir.
+        upload_dir = Path(os.environ.get("UPLOAD_DIR", tempfile.gettempdir())) / "uploads"
+        upload_dir.mkdir(parents=True, exist_ok=True)
         (upload_dir / safe_name).write_bytes(content)
         resume_filename = safe_name
         resume_size = len(content)
